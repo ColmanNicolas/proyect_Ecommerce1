@@ -1,12 +1,12 @@
 {
   "products": [
     {
-      "id": "1",
       "name": "Martillo acero inoxidable",
-      "price": 1500,
       "brand": "Black & Decker",
+      "price": 1500,
+      "description": "Martillo resistente y duradero de la marca Black & Decker. Ideal para trabajos de carpintería y construcción.",
       "stock": 7,
-      "description": "Martillo resistente y duradero de la marca Black & Decker. Ideal para trabajos de carpintería y construcción."
+      "id": "1"
     },
     {
       "name": "Destornillador eléctrico",
@@ -21,7 +21,7 @@
       "brand": "DeWalt",
       "price": 3000,
       "description": "Taladro inalámbrico de alto rendimiento de la marca DeWalt. Con batería de larga duración, es ideal para perforaciones en madera, metal y concreto.",
-      "stock": 10,
+      "stock": "100000",
       "id": "3"
     },
     {
@@ -33,20 +33,20 @@
       "id": "5"
     },
     {
-      "id": "6",
       "name": "Cinta métrica",
-      "price": 800,
       "brand": "Klein Tools",
-      "stock": 25,
-      "description": "Cinta métrica duradera y precisa de la marca Klein Tools. Perfecta para mediciones precisas en proyectos de construcción y carpintería."
+      "price": 800,
+      "description": "Cinta métrica duradera y precisa de la marca Klein Tools. Perfecta para mediciones precisas en proyectos de construcción y carpintería.",
+      "stock": "27",
+      "id": "6"
     },
     {
-      "id": "7",
       "name": "Nivel láser",
-      "price": 5000,
       "brand": "Leica",
+      "price": 5000,
+      "description": "Nivel láser de alta gama de la marca Leica. Proporciona líneas de referencia precisas para trabajos de alineación y nivelación en interiores y exteriores.",
       "stock": 5,
-      "description": "Nivel láser de alta gama de la marca Leica. Proporciona líneas de referencia precisas para trabajos de alineación y nivelación en interiores y exteriores."
+      "id": "7"
     },
     {
       "id": "8",
@@ -105,44 +105,20 @@
       "description": "Tijeras de corte de precisión de la marca Fiskars. Ideales para cortar tela, cartón, papel y otros materiales con facilidad y precisión."
     },
     {
-      "id": "15",
       "name": "Afilador de cuchillos",
-      "price": 1500,
       "brand": "Chef's Choice",
+      "price": 1500,
+      "description": "Afilador de cuchillos eléctrico de la marca Chef's Choice. Restaura rápidamente el filo de tus cuchillos para un corte preciso y eficiente.",
       "stock": 10,
-      "description": "Afilador de cuchillos eléctrico de la marca Chef's Choice. Restaura rápidamente el filo de tus cuchillos para un corte preciso y eficiente."
+      "id": "15"
     },
     {
-      "name": "Soplador de hojas",
-      "brand": "Husqvarna",
-      "price": 3500,
-      "description": "Soplador de hojas potente de la marca Husqvarna. Perfecto para limpiar jardines, patios y áreas exteriores de hojas y residuos.",
-      "stock": 8,
-      "id": "16"
-    },
-    {
-      "id": "17",
-      "name": "Pala de jardinería",
-      "price": 1200,
-      "brand": "Fiskars",
-      "stock": 20,
-      "description": "Pala de jardinería resistente de la marca Fiskars. Ideal para cavar, trasplantar y mover tierra en proyectos de jardinería y paisajismo."
-    },
-    {
-      "id": "18",
-      "name": "Cuchillo de utilidad",
-      "price": 800,
-      "brand": "Stanley",
-      "stock": 25,
-      "description": "Cuchillo de utilidad resistente de la marca Stanley. Perfecto para cortar materiales diversos en trabajos de bricolaje, reparaciones y más."
-    },
-    {
-      "id": "19",
-      "name": "Lijadora orbital",
-      "price": 2500,
-      "brand": "Porter-Cable",
-      "stock": 12,
-      "description": "Lijadora orbital de alta calidad de la marca Porter-Cable. Ideal para eliminar imperfecciones y alisar superficies en proyectos de carpintería y acabado."
+      "id": "16",
+      "name": "fdsadfsfsd",
+      "brand": "asdas",
+      "price": "45",
+      "description": "sdasdsa",
+      "stock": "56"
     }
   ]
 }

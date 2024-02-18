@@ -4,13 +4,19 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ContenedorTarjetasHome = () => {
-    const [categorias] = useState(["MEDICINA", "ELECTRONICA", "CONSTRUCCION", "VEHICULOS", "BELLEZA"]);
+
+    function generarAleatorio() {
+        return Math.random() - 0.5;
+    }
+    const categorias = ["MEDICINA", "COMPUTADORAS", "CONSTRUCCION", "VEHICULOS", "BELLEZA", "CELULARES","ELECTRODOMESTICOS","BICICLETAS","DEPORTE","BAZAR"];
     const [productos, setProductos] = useState([]);
+
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const requests = categorias.map(categoria =>
+                const requests = categorias.sort(generarAleatorio).slice(0, 5).map(categoria =>
                     axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${categoria}`)
                 );
                 const responses = await Promise.all(requests);
