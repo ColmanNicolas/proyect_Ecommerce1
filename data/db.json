@@ -5,12 +5,12 @@
       "brand": "Black & Decker",
       "price": 1500,
       "description": "Martillo resistente y duradero de la marca Black & Decker. Ideal para trabajos de carpintería y construcción.",
-      "stock": 7,
+      "stock": "7",
       "id": "1"
     },
     {
       "name": "Destornillador eléctrico",
-      "brand": "Bosch",
+      "brand": "Thunder",
       "price": 2500,
       "description": "Destornillador eléctrico de alta potencia y precisión de la reconocida marca Bosch. Perfecto para montaje de muebles y reparaciones rápidas.",
       "stock": 15,

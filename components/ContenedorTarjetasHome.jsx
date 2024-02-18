@@ -29,7 +29,6 @@ const ContenedorTarjetasHome = () => {
                 console.error('Error fetching data:', error);
             }
         };
-
         fetchData();
     }, []);
 

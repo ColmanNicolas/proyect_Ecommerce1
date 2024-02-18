@@ -3,39 +3,68 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const ContenedorListadoProductos = ()=>{
+const ContenedorListadoProductos = () => {
 
     const [productsList, setProductsList] = useState([]);
-    
+
     useEffect(() => {
         axios.get('http://localhost:3000/products').then((result) => {
             setProductsList(result.data);
         });
     }, []);
 
-    return(
+    return (
         <div style={{ width: "1000px", color: "White", marginInline: "auto", borderRadius: "10px" }} className=" my-5 sombraComponente conteiner pb-3 bg-dark">
-                <h1 className="text-center pt-4 pb-2" >LISTADO DE PRODUCTOS</h1>
-                <hr />
-                <div className="d-flex justify-content-between" >
-                    <button  className="btn btn-primary fw-semibold ms-4">Filtrar por Categoria</button>
-                    <Link to={`/productos/modificacion/agregar-nuevo`} className="btn btn-primary fw-semibold me-4">Agregar Producto</Link>
-                </div>
-                <hr />
-                <ul className="ps-0">
-                    {productsList.map((product) => {
-                        return <ol key={product.id} className="d-flex align-items-center mb-1">
-                            <div>
-                                <Link to={`/productos/ver/${product.name + "-" + product.brand + "-" + product.id}`} className="text-white fs-5 text-decoration-none ">{product.name}  </Link>
-                            </div>
-                            <div className="ms-auto me-4">
-                                <Link to={`/productos/ver/${product.name + "-" + product.brand + "-" + product.id}`} className="btn btn-primary px-3 fw-semibold">Ver</Link>
-                                <Link to={`/productos/modificacion/modificar-${product.name + "-" + product.id}`} className="btn btn-danger ms-2 d-inline-block">Modificar</Link>
-                            </div>
-                        </ol>
-                    })}
-                </ul>
+            <h1 className="text-center pt-4 pb-2" >LISTADO DE PRODUCTOS</h1>
+            <hr />
+            <div className="d-flex justify-content-between mx-4" >
+                <button className="btn btn-primary fw-semibold ">Filtrar por Categoria</button>
+                <Link to={`/productos/modificacion/agregar-nuevo`} className="btn btn-primary fw-semibold me-5">Agregar Producto</Link>
             </div>
-    )    
+            <hr />
+            <table className="table table-hover table-dark mt-5 " >
+                <thead >
+                    <tr>
+                        <th className="ps-4" scope="col">PRODUCTO</th>
+                        <th scope="col">MARCA</th>
+                        <th scope="col">PRECIO</th>
+                        <th className="text-center " scope="col">ACCIONES</th>
+                    </tr>
+                </thead>
+                {productsList.map((product, index) => {
+                    return <tbody key={product.id}>
+                        <tr>
+                            <td className=" ps-4 pt-3">{product.name}</td>
+                            <td className=" pt-3">{product.brand}</td>
+                            <td className=" pt-3">$ {product.price}</td>
+                            <td className=" text-center">
+                                <Link to={`/productos/ver/${product.name + "-" + product.brand + "-" + product.id}`} className="btn btn-primary px-4 fw-semibold">Ver</Link>
+                                <Link to={`/productos/modificacion/modificar-${product.name + "-" + product.id}`} className="btn btn-danger ms-2 fw-semibold">Modificar</Link>
+                            </td>
+                        </tr>
+                    </tbody>
+                })}
+            </table>
+            <div className="d-flex justify-content-center mt-4"> 
+            <nav aria-label=" Page navigation example ">
+                <ul class="pagination bg-dark">
+                    <li class="page-item">
+                        <a class="page-link fw-bold " href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link fw-bold text-dark" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link fw-bold text-dark" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link fw-bold text-dark" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link fw-bold " href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+    )
 }
 export default ContenedorListadoProductos;

@@ -60,7 +60,7 @@ const FormularioModificacion = () => {
         } 
         reset();
     }
-    return (
+    return (      
         <form className="bg-dark text-white fw-semibold px-3 py-2 sombraComponente" style={{ width: "500px", marginInline: "auto ", marginBlock: "50px", borderRadius: "10px" }}
         onSubmit={handleSubmit(enviarFormularrio)}>
             <div className="pt-2">
@@ -112,9 +112,8 @@ const FormularioModificacion = () => {
                 { accion==="modificar" && <button type="submit" className="btn btn-dark border-white fw-semibold">Modificar</button>}
                 { accion==="agregar" && <button type="submit" className="btn btn-success fw-semibold">Guardar Producto</button>}
                 { accion==="modificar" && <button type="button" className="btn btn-danger fw-semibold" onClick={borrarProducto}>Eliminar</button>} 
-            </div>
+            </div>       
         </form>
-
     )
 }
 export default FormularioModificacion;
