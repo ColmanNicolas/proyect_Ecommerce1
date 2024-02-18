@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Martillo acero inoxidable",
+      "price": 1500,
+      "brand": "Black & Decker",
+      "stock": 7,
+      "description": "Martillo resistente y duradero de la marca Black & Decker. Ideal para trabajos de carpintería y construcción."
+    },
+    {
+      "name": "Destornillador eléctrico",
+      "brand": "Bosch",
+      "price": 2500,
+      "description": "Destornillador eléctrico de alta potencia y precisión de la reconocida marca Bosch. Perfecto para montaje de muebles y reparaciones rápidas.",
+      "stock": 15,
+      "id": "2"
+    },
+    {
+      "name": "Taladro inalámbrico",
+      "brand": "DeWalt",
+      "price": 3000,
+      "description": "Taladro inalámbrico de alto rendimiento de la marca DeWalt. Con batería de larga duración, es ideal para perforaciones en madera, metal y concreto.",
+      "stock": 10,
+      "id": "3"
+    },
+    {
+      "name": "Llave ajustable",
+      "brand": "Stanley",
+      "price": "1700",
+      "description": "Llave ajustable de alta calidad de la marca Stanley. Ideal para apretar y aflojar tuercas y tornillos de diferentes tamaños con facilidad.",
+      "stock": 20,
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "name": "Cinta métrica",
+      "price": 800,
+      "brand": "Klein Tools",
+      "stock": 25,
+      "description": "Cinta métrica duradera y precisa de la marca Klein Tools. Perfecta para mediciones precisas en proyectos de construcción y carpintería."
+    },
+    {
+      "id": "7",
+      "name": "Nivel láser",
+      "price": 5000,
+      "brand": "Leica",
+      "stock": 5,
+      "description": "Nivel láser de alta gama de la marca Leica. Proporciona líneas de referencia precisas para trabajos de alineación y nivelación en interiores y exteriores."
+    },
+    {
+      "id": "8",
+      "name": "Alicate de corte",
+      "price": 1800,
+      "brand": "Irwin",
+      "stock": 12,
+      "description": "Alicate de corte robusto y resistente de la marca Irwin. Perfecto para cortar alambre, cables y otros materiales con precisión y facilidad."
+    },
+    {
+      "id": "9",
+      "name": "Cepillo eléctrico",
+      "price": 2700,
+      "brand": "Ryobi",
+      "stock": 8,
+      "description": "Cepillo eléctrico potente de la marca Ryobi. Ideal para trabajos de carpintería, eliminación de rebabas y acabado de superficies."
+    },
+    {
+      "id": "10",
+      "name": "Herramienta multifunción",
+      "price": 4000,
+      "brand": "Gerber",
+      "stock": 10,
+      "description": "Herramienta multifunción compacta y versátil de la marca Gerber. Incluye alicates, cuchillas, destornilladores y más, perfecta para diversas tareas."
+    },
+    {
+      "id": "11",
+      "name": "Pistola de calor",
+      "price": 2000,
+      "brand": "Wagner",
+      "stock": 6,
+      "description": "Pistola de calor de alta potencia de la marca Wagner. Ideal para decapado de pintura, soldadura de plásticos y descongelamiento de tuberías."
+    },
+    {
+      "id": "12",
+      "name": "Broca para madera",
+      "price": 500,
+      "brand": "Bosch",
+      "stock": 30,
+      "description": "Broca especializada para madera de la marca Bosch. Con diseño afilado y duradero, proporciona perforaciones limpias y precisas."
+    },
+    {
+      "id": "13",
+      "name": "Llave de impacto",
+      "price": 3500,
+      "brand": "Milwaukee",
+      "stock": 7,
+      "description": "Llave de impacto de alta potencia de la marca Milwaukee. Perfecta para apretar y aflojar tuercas y tornillos de gran tamaño con facilidad."
+    },
+    {
+      "id": "14",
+      "name": "Tijeras de corte",
+      "price": 1000,
+      "brand": "Fiskars",
+      "stock": 15,
+      "description": "Tijeras de corte de precisión de la marca Fiskars. Ideales para cortar tela, cartón, papel y otros materiales con facilidad y precisión."
+    },
+    {
+      "id": "15",
+      "name": "Afilador de cuchillos",
+      "price": 1500,
+      "brand": "Chef's Choice",
+      "stock": 10,
+      "description": "Afilador de cuchillos eléctrico de la marca Chef's Choice. Restaura rápidamente el filo de tus cuchillos para un corte preciso y eficiente."
+    },
+    {
+      "name": "Soplador de hojas",
+      "brand": "Husqvarna",
+      "price": 3500,
+      "description": "Soplador de hojas potente de la marca Husqvarna. Perfecto para limpiar jardines, patios y áreas exteriores de hojas y residuos.",
+      "stock": 8,
+      "id": "16"
+    },
+    {
+      "id": "17",
+      "name": "Pala de jardinería",
+      "price": 1200,
+      "brand": "Fiskars",
+      "stock": 20,
+      "description": "Pala de jardinería resistente de la marca Fiskars. Ideal para cavar, trasplantar y mover tierra en proyectos de jardinería y paisajismo."
+    },
+    {
+      "id": "18",
+      "name": "Cuchillo de utilidad",
+      "price": 800,
+      "brand": "Stanley",
+      "stock": 25,
+      "description": "Cuchillo de utilidad resistente de la marca Stanley. Perfecto para cortar materiales diversos en trabajos de bricolaje, reparaciones y más."
+    },
+    {
+      "id": "19",
+      "name": "Lijadora orbital",
+      "price": 2500,
+      "brand": "Porter-Cable",
+      "stock": 12,
+      "description": "Lijadora orbital de alta calidad de la marca Porter-Cable. Ideal para eliminar imperfecciones y alisar superficies en proyectos de carpintería y acabado."
+    }
+  ]
+}

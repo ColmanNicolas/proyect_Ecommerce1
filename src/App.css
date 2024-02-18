@@ -1,0 +1,33 @@
+.navLinkItems{
+    color: white;
+    background-color: rgb(49, 47, 47);
+    font-weight:600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    padding-inline: 8px;
+    display: flex;
+    align-items: center;
+    margin-block: 16px;
+    transition: all 0.3s ease;
+}
+.navLinkItems:hover{
+    color: rgb(0, 0, 0) ;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+    -webkit-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+    -moz-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+}
+
+.navLinkItems:not(:hover) {
+    transition-duration: 1s; /* Duración más larga de 0.6 segundos al quitar el cursor */
+}
+.active{
+    color: rgb(0, 0, 0) ;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+    -webkit-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+    -moz-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7) !important;
+}
+body{
+    background-color: rgb(46, 46, 46);
+}
