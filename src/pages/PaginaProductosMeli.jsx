@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import BuscadorMeLi from "../../components/BuscadorMeLi";
-
+import "../../components/clasesGenerales.css"
 
 
 const PaginaProductosMeLi = () => {
@@ -14,6 +14,7 @@ const PaginaProductosMeLi = () => {
     useEffect(() => {
         axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${object.busqueda}`).then((result) => {
             setProductList(result.data.results);
+            console.log(result.data.results);
         });
     }, [object.busqueda]); // Aquí se especifica que el useEffect se ejecutará cada vez que object.busqueda cambie
 
@@ -32,16 +33,20 @@ const PaginaProductosMeLi = () => {
                         <div key={producto.id}>
                             <div className="ms-auto w-100 py-3 px-5 d-flex align-items-center">
                                 <div className="d-flex justify-content-center pe-5">
-                                    <img src={producto.thumbnail} alt="Imagen del producto" width={130} height={150} style={{ borderRadius: "7px" }} />
+                                    <img className="outlineNegro" src={producto.thumbnail} alt="Imagen del producto" width={130} height={150} style={{ borderRadius: "7px" }} />
                                 </div>
                                 <div className="w-100">
                                     <hr />
                                     <h1 className="ps-2 fs-4 pt-0 mt-0 w-100">{producto.title}</h1>
                                     <hr />
+                                    <div className="d-flex align-items-center ps-2  fs-5">
+                                        <p className="pe-2 fw-semibold">Vendedor:</p>
+                                        <p className=""> {producto.seller.nickname}</p>
+                                    </div>
                                     <p className="ps-2 fw-semibold">Condición: {producto.condition}</p>
                                     <div className="d-flex justify-content-between align-items-center px-2">
                                         <p className="pb-0 mb-0 fs-5">Precio: ${producto.price}</p>
-                                        <button className="btn btn-dark border-primary fw-semibold border-2">Comprar</button>
+                                        <Link to={producto.permalink} className="btn btn-dark border-primary fw-semibold border-2" >Comprar</Link>
                                     </div>
                                     <hr />
                                 </div>

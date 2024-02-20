@@ -22,13 +22,13 @@ const CajaComentariosProductos = () => {
         <div className="bg-dark mx-auto mt-5 outlineNegro pt-2" style={{ width: "700px", borderRadius: "10px" }}>
             <hr className="text-white" />
             <div className=" px-3" >
-                <h3 className="text-white ">Caja de comentarios</h3>
+                <h3 className="text-white ">Comentarios</h3>
             </div>
             <hr className="text-white" />
             <form className="px-2">
                 <textarea className="w-100 px-1" name="" id="" placeholder="Ingrese un comentario..." rows="4" required></textarea>
                 <div className="text-end">
-                    <button className="btn btn-dark border-white" >Comentar</button>
+                    <button className="btn btn-dark border-white" >Enviar</button>
                 </div>
             </form>
             <hr className="text-white" />
