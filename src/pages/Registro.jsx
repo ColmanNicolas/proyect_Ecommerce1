@@ -7,11 +7,17 @@ const Registro = () => {
 
     return (
         <>
-            <Navbar />
-            <div className="d-flex justify-content-center my-5">
-                <FormularioRegistro />
+            <div className="d-flex flex-column min-vh-100">
+                <div>
+                    <Navbar />
+                    <div className="mt-5 d-flex justify-content-center">
+                        <FormularioRegistro />
+                    </div>
+                </div>
+                <div className="mt-auto">
+                    <Footer />
+                </div>
             </div>
-            <Footer/>
         </>
     )
 };

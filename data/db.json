@@ -119,14 +119,6 @@
       "price": "45",
       "description": "sdasdsa",
       "stock": "56"
-    },
-    {
-      "id": "17",
-      "name": "fsdfsd",
-      "brand": "sdfs",
-      "price": "1",
-      "description": "fsdfsd",
-      "stock": "2"
     }
   ]
 }

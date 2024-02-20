@@ -4,7 +4,7 @@ const Pagina404 = () => {
     
     return (
         <>
-            <div className="min-vh-100 d-flex justify-content-center align-items-center text-white">
+            <div className="min-vh-100 d-flex justify-content-center align-items-center text-white " style={{backgroundColor: "#343436"}}>
                 <div>
                     <hr />
                     <h1 className="text-center">ERROR 404</h1>

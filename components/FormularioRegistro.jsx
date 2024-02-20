@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 
 import './formulario.css'
+import axios from "axios";
 
 
 const formularioRegistro = () => {
@@ -9,10 +10,18 @@ const formularioRegistro = () => {
         register,
         formState: { errors },
         watch,
+        reset,
     } = useForm();
 
-    const enviarFormulario = (data) => {
-        console.log(data);
+    const enviarFormulario = async (data) => {
+        await axios.get(`http://localhost:3000/users`).then((results)=>{
+            const idNuevo = parseInt(results.data[results.data.length-1].id)+1;
+            data['id']=idNuevo.toString();           
+        }).then(()=>{
+            axios.post(`http://localhost:3000/users`,data);
+            console.log('Usuario creado:', data);                 
+        })   
+        reset();
     };
 
     return (
@@ -24,7 +33,7 @@ const formularioRegistro = () => {
             <div className="lineaDivisora"></div>
             <div className="mb-3">
                 <label htmlFor="nombreRegistro" className="form-label fw-semibold">
-                    Nombre
+                    Nombre Completo
                 </label>
                 <input
                     type="text"
@@ -40,22 +49,22 @@ const formularioRegistro = () => {
                 {errors.nombreRegistro && (
                     <>
                         {errors.nombreRegistro.type === "required" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold ">
+                            <p className="formatoErros">
                                 Ingrese su nombre
                             </p>
                         )}
                         {errors.nombreRegistro.type === "minLength" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold">
+                            <p className="formatoErros">
                                 Nombre muy corto
                             </p>
                         )}
                         {errors.nombreRegistro.type === "maxLength" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold">
+                            <p className="formatoErros">
                                 Nombre muy largo
                             </p>
                         )}
                         {errors.nombreRegistro.type === "pattern" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold">
+                            <p className="formatoErros">
                                 Nombre contiene caracteres inválidos
                             </p>
                         )}
@@ -76,7 +85,7 @@ const formularioRegistro = () => {
                     })}
                 />
                 {errors.correoElectronico && (
-                    <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                    <p className="formatoErros">
                         ingrese su correo electronico
                     </p>
                 )}
@@ -99,22 +108,22 @@ const formularioRegistro = () => {
                 {errors.contraseñaRegistro && (
                     <>
                         {errors.contraseñaRegistro.type === "required" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="formatoErros">
                                 Ingrese una contraseña
                             </p>
                         )}
                         {errors.contraseñaRegistro.type === "minLength" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="formatoErros">
                                 Debe tener al menos 8 caracteres
                             </p>
                         )}
                         {errors.contraseñaRegistro.type === "maxLength" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="formatoErros">
                                 No puede superar los 25 caracteres
                             </p>
                         )}
                         {errors.contraseñaRegistro.type === "pattern" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="formatoErros">
                                 La contraseña no es válida
                             </p>
                         )}
@@ -137,12 +146,12 @@ const formularioRegistro = () => {
                 {errors.contraseñaRegistroRep && (
                     <>
                         {errors.contraseñaRegistroRep.type === "required" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="formatoErros">
                                 Ingrese una contraseña
                             </p>
                         )}
                         {errors.contraseñaRegistroRep.type === "validate" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="formatoErros">
                                 Las contraseñas no coinciden
                             </p>
                         )}
@@ -150,7 +159,7 @@ const formularioRegistro = () => {
                 )}
             </div>
             <div className="lineaDivisora"></div>
-            <p className="p-2 bg-secondary text-white ">
+            <p className="p-2 bg-primary text-white " style={{borderRadius: "7px",fontSize:"0.9rem",fontWeight:"600"}}>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
                 corrupti dignissimos quisquam, error excepturi hic, quaerat tempora
                 laboriosam sequi distinctio optio, nemo omnis. Quod corrupti incidunt
