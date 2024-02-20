@@ -17,7 +17,7 @@ const formularioRegistro = () => {
 
     return (
         <form
-            className="contenedorformulario p-3 sombracomponentes bg-dark text-white"
+            className="contenedorformulario p-3 outlineNegro bg-dark text-white"
             onSubmit={handleSubmit(enviarFormulario)}
         >
             <h3 className="my-2 text-white">FORMULARIO DE REGISTRO</h3>
@@ -40,22 +40,22 @@ const formularioRegistro = () => {
                 {errors.nombreRegistro && (
                     <>
                         {errors.nombreRegistro.type === "required" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold ">
+                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold ">
                                 Ingrese su nombre
                             </p>
                         )}
                         {errors.nombreRegistro.type === "minLength" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold">
                                 Nombre muy corto
                             </p>
                         )}
                         {errors.nombreRegistro.type === "maxLength" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold">
                                 Nombre muy largo
                             </p>
                         )}
                         {errors.nombreRegistro.type === "pattern" && (
-                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-bold">
+                            <p className="text-white bg-danger d-inline-block px-2 mt-1 fw-semibold">
                                 Nombre contiene caracteres inválidos
                             </p>
                         )}

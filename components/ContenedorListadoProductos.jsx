@@ -14,7 +14,7 @@ const ContenedorListadoProductos = () => {
     }, []);
 
     return (
-        <div style={{ width: "1000px", color: "White", marginInline: "auto", borderRadius: "10px" }} className=" my-5 sombraComponente conteiner pb-3 bg-dark">
+        <div style={{ width: "1000px", color: "White", marginInline: "auto", borderRadius: "10px" }} className=" my-5 outlineNegro conteiner pb-3 bg-dark">
             <h1 className="text-center pt-4 pb-2" >LISTADO DE PRODUCTOS</h1>
             <hr />
             <div className="d-flex justify-content-between mx-4" >
@@ -47,17 +47,17 @@ const ContenedorListadoProductos = () => {
             </table>
             <div className="d-flex justify-content-center mt-4"> 
             <nav aria-label=" Page navigation example ">
-                <ul class="pagination bg-dark">
-                    <li class="page-item">
-                        <a class="page-link fw-bold " href="#" aria-label="Previous">
+                <ul className="pagination bg-dark">
+                    <li className="page-item">
+                        <a className="page-link fw-bold " href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li class="page-item active"><a class="page-link fw-bold text-dark" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link fw-bold text-dark" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link fw-bold text-dark" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link fw-bold " href="#" aria-label="Next">
+                    <li className="page-item active"><a className="page-link fw-bold text-dark" href="#">1</a></li>
+                    <li className="page-item"><a className="page-link fw-bold text-dark" href="#">2</a></li>
+                    <li className="page-item"><a className="page-link fw-bold text-dark" href="#">3</a></li>
+                    <li className="page-item">
+                        <a className="page-link fw-bold " href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

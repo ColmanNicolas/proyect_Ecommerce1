@@ -1,4 +1,12 @@
-.sombraComponente{
+.outlineNegro{
 outline: 2px solid black;
-
+}
+.formatoErros{
+    background-color: rgb(209, 52, 52);
+    display: inline-block;
+    padding-inline: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 7px;
+    margin-top: 10px;
 }

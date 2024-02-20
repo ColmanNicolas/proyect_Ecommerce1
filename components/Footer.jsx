@@ -2,7 +2,7 @@ import "./clasesGenerales.css"
 
 const Footer = ()=>{
     return (
-        <div className="bg-primary d-flex mt-5 sombraComponente">
+        <div className="bg-primary d-flex mt-5 outlineNegro">
             <div className="bg-primary col-4">
                 <h1 className="text-center" >Contacto</h1>
             </div>

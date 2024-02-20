@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./clasesGenerales.css"
 
 
 const TarjetaProducto = () => {
@@ -16,12 +17,12 @@ const TarjetaProducto = () => {
         });
     }, []);
     return (
-        <div className="conteiner-fluid d-flex mt-5 justify-content-center">
-            <div className="col-12 col-sm-7 col-md-4  bg-dark text-white p-3 " style={{width:"450px",borderRadius: "10px"}}>
+        <div className="conteiner-fluid d-flex mt-5 justify-content-center ">
+            <div className="col-12 col-sm-7 col-md-4  bg-dark text-white p-3 outlineNegro" style={{width:"450px",borderRadius: "10px"}}>
                 <h2 className="fw-bold text-center">{product.name}</h2>
                 <hr />
                 <div className="d-flex justify-content-center ">
-                    <div className="bg-secondary d-flex flex-column text-white p-2">
+                    <div className="bg-secondary d-flex flex-column text-white p-2 outlineNegro">
                         <span>Imagen no disponible</span>
                         <span>Imagen no disponible</span>
                         <span>Imagen no disponible</span>

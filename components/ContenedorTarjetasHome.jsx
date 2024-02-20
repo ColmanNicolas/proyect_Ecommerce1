@@ -35,13 +35,13 @@ const ContenedorTarjetasHome = () => {
     return (
         <>
             {productos.map((categoriaProductos, index) => (
-                <div key={index} className=" bg-primary mx-auto mt-5 sombraComponente" style={{ height: "400px", width: "60%", borderRadius: "10px" }}>
+                <div key={index} className=" bg-primary mx-auto mt-5 outlineNegro" style={{ height: "400px", width: "60%", borderRadius: "10px" }}>
                     <h1 className="text-center bg-dark my-3 py-3 text-white ">{categoriaProductos.categoria}</h1>
                     <div className="conteiner d-flex justify-content-evenly mt-4">
                         {categoriaProductos.productos.slice(0, 4).map((product, productIndex) => (
-                            <div key={productIndex} className="bg-dark d-flex flex-column align-items-between px-2 sombraComponente" style={{ height: "250px", width: "200px", borderRadius: "10px" }}>
+                            <div key={productIndex} className="bg-dark d-flex flex-column align-items-between px-2 outlineNegro" style={{ height: "250px", width: "200px", borderRadius: "10px" }}>
                                 <div  style={{ height: "150px", width: "120px", overflow: "hidden",marginTop:"10px", marginInline:"auto" }}>
-                                    <img className="sombraComponente" src={product.thumbnail} alt="" style={{ width: "100%", height: "100%", objectFit: "cover",borderRadius:"10px" }} />
+                                    <img className="outlineNegro" src={product.thumbnail} alt="" style={{ width: "100%", height: "100%", objectFit: "cover",borderRadius:"10px" }} />
                                 </div>
                                 <hr className="text-white"/>
                                 <div className="">
