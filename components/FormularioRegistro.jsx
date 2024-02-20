@@ -2,9 +2,12 @@ import { useForm } from "react-hook-form";
 
 import './formulario.css'
 import axios from "axios";
+import { useState } from "react";
+
 
 
 const formularioRegistro = () => {
+
     const {
         handleSubmit,
         register,
@@ -12,15 +15,21 @@ const formularioRegistro = () => {
         watch,
         reset,
     } = useForm();
+    
+    const [showPassword, setShowPassword] = useState(false);
+    
+    const visibilidadContraseña = () => {
+        setShowPassword(!showPassword);
+    };
 
     const enviarFormulario = async (data) => {
-        await axios.get(`http://localhost:3000/users`).then((results)=>{
-            const idNuevo = parseInt(results.data[results.data.length-1].id)+1;
-            data['id']=idNuevo.toString();           
-        }).then(()=>{
-            axios.post(`http://localhost:3000/users`,data);
-            console.log('Usuario creado:', data);                 
-        })   
+        await axios.get(`http://localhost:3000/users`).then((results) => {
+            const idNuevo = parseInt(results.data[results.data.length - 1].id) + 1;
+            data['id'] = idNuevo.toString();
+        }).then(() => {
+            axios.post(`http://localhost:3000/users`, data);
+            console.log('Usuario creado:', data);
+        })
         reset();
     };
 
@@ -94,17 +103,23 @@ const formularioRegistro = () => {
                 <label htmlFor="contraseñaRegistro" className="form-label fw-semibold">
                     Contraseña
                 </label>
-                <input
-                    type="password"
-                    className="form-control"
-                    id="contraseñaRegistro"
-                    {...register("contraseñaRegistro", {
-                        required: true,
-                        minLength: 8,
-                        maxLength: 30,
-                        pattern: /^(?=.*[A-Z])(?=.*\d).+$/,
-                    })}
-                />
+                <div className="d-flex">
+                    <input
+                        type={showPassword ? "text" : "password"} 
+                        className="form-control"
+                        id="contraseñaRegistro"
+                        {...register("contraseñaRegistro", {
+                            required: true,
+                            minLength: 8,
+                            maxLength: 30,
+                            pattern: /^(?=.*[A-Z])(?=.*\d).+$/,
+                        })}
+                        style={{ borderRadius: "10px 0 0 10px " }}
+                    />
+                    <button type="button" className=" bg-dark px-2 text-white fw-bold"
+                        onClick={visibilidadContraseña}
+                        style={{ borderRadius: "0 10px 10px 0 " }}> {showPassword ? <i class="bi bi-eye-slash"></i> : <i class="bi bi-eye"></i>} </button>
+                </div>
                 {errors.contraseñaRegistro && (
                     <>
                         {errors.contraseñaRegistro.type === "required" && (
@@ -159,7 +174,7 @@ const formularioRegistro = () => {
                 )}
             </div>
             <div className="lineaDivisora"></div>
-            <p className="p-2 bg-primary text-white " style={{borderRadius: "7px",fontSize:"0.9rem",fontWeight:"600"}}>
+            <p className="p-2 bg-primary text-white " style={{ borderRadius: "7px", fontSize: "0.9rem", fontWeight: "600" }}>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
                 corrupti dignissimos quisquam, error excepturi hic, quaerat tempora
                 laboriosam sequi distinctio optio, nemo omnis. Quod corrupti incidunt
