@@ -13,8 +13,7 @@ const CajaComentariosProductos = () => {
     useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/comments").then((results) => {
             const comentariosAleatorios = [...results.data].sort(generarAleatorio);
-            setComentarios(comentariosAleatorios);
-            console.log(comentariosAleatorios);
+            setComentarios(comentariosAleatorios);           
         })
     }, []);
     

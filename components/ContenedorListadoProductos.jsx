@@ -8,7 +8,8 @@ const ContenedorListadoProductos = () => {
     const [productsList, setProductsList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/products').then((result) => {
+        axios.get('http://localhost:4000/productos').then((result) => {
+            console.log(result.data);
             setProductsList(result.data);
         });
     }, []);
@@ -28,7 +29,7 @@ const ContenedorListadoProductos = () => {
                         <th className="ps-4" scope="col">PRODUCTO</th>
                         <th scope="col">MARCA</th>
                         <th scope="col">PRECIO</th>
-                        <th className="text-center " scope="col">ACCIONES</th>
+                        <th className="text-center ps-5" scope="col">ACCIONES</th>
                     </tr>
                 </thead>
                 {productsList.map((product, index) => {
@@ -37,7 +38,7 @@ const ContenedorListadoProductos = () => {
                             <td className=" ps-4 pt-3">{product.name}</td>
                             <td className=" pt-3">{product.brand}</td>
                             <td className=" pt-3">$ {product.price}</td>
-                            <td className=" text-center">
+                            <td className=" text-end pe-5">
                                 <Link to={`/productos/ver/${product.name + "-" + product.brand + "-" + product.id}`} className="btn btn-primary px-4 fw-semibold">Ver</Link>
                                 <Link to={`/productos/modificacion/modificar-${product.name + "-" + product.id}`} className="btn btn-danger ms-2 fw-semibold">Modificar</Link>
                             </td>

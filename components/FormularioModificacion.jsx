@@ -25,7 +25,7 @@ const FormularioModificacion = () => {
 
         if(accion==="modificar"){
 
-            axios.get(`http://localhost:3000/products/${id}`).then((result) => {
+            axios.get(`http://localhost:4000/productos/${id}`).then((result) => {
                 
                 setValue('name', result.data.name)
                 setValue('brand', result.data.brand)
@@ -37,29 +37,27 @@ const FormularioModificacion = () => {
     }, []);
 
     const borrarProducto = async () =>{
-        const response = await axios.delete(`http://localhost:3000/products/${id}`);
+        const response = await axios.delete(`http://localhost:4000/productos/${id}`);
         console.log('Elemento borrado:', response.data);
         navigate("/productos");    
     }
     
     const enviarFormularrio = async (inputsData) =>{
         if(accion==="modificar"){
-            const response = await axios.put(`http://localhost:3000/products/${id}`, inputsData);
-            console.log('Elemento modificado:', response.data);
-            navigate(`/productos/ver/${inputsData.name + "-"+ inputsData.brand + "-" + id }`);
+            const response = await axios.put(`http://localhost:4000/productos/${id}`, inputsData).then((response)=>{
+                console.log('Elemento modificado:', response.data);
+                navigate(`/productos/ver/${response.data.name + "-"+ response.data.brand + "-" + id }`);
+            })
 
         }else if (accion ==="agregar") {
-            await axios.get(`http://localhost:3000/products`).then((results)=>{
-                const idNuevo = parseInt(results.data[results.data.length-1].id)+1;
-                inputsData['id']=idNuevo.toString();           
-            }).then(()=>{
-                axios.post(`http://localhost:3000/products`,inputsData);
-                console.log('Elemento creado:', inputsData);                 
-            })                     
-            navigate(`/productos/ver/${inputsData.name + "-"+ inputsData.brand + "-" + inputsData.id }`);
+            axios.post(`http://localhost:4000/productos`,inputsData).then((response)=>{
+                console.log(response.data);        
+                navigate(`/productos/ver/${response.data.name + "-"+ response.data.brand + "-" + response.data.id }`);
+            })
+            }                  
+            reset();
         } 
-        reset();
-    }
+    
     return (      
         <form className="bg-dark text-white fw-semibold px-3 py-2 outlineNegro " style={{ width: "500px", marginInline: "auto ", marginBlock: "50px", borderRadius: "10px" }}
         onSubmit={handleSubmit(enviarFormularrio)}>

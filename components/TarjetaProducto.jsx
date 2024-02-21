@@ -12,7 +12,7 @@ const TarjetaProducto = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/products/${id}`).then((result) => {
+        axios.get(`http://localhost:4000/productos/${id}`).then((result) => {
             setProduct(result.data);
         });
     }, []);
