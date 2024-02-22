@@ -10,3 +10,8 @@ outline: 2px solid black;
     border-radius: 7px;
     margin-top: 10px;
 }
+.swiper {
+    width: 600px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.514);
+}

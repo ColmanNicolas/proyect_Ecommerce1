@@ -7,7 +7,7 @@ const Navbar = () =>{
     <NavLink to={"/home"} className="mx-2 navLinkItems">Inicio</NavLink>
     <NavLink to={"/vendedores"} className="navLinkItems">Vendedores</NavLink>
     <NavLink to={"/productos"} className="mx-2 navLinkItems">Productos</NavLink>
-    <NavLink to={"/pagina404"} className="navLinkItems">Informacion</NavLink>
+    <NavLink to={"/about"} className="navLinkItems">Informacion</NavLink>
     <NavLink to={"/registro"} className="ms-auto navLinkItems">Registrarse</NavLink>
     <NavLink to={"/login"} className="mx-2 navLinkItems">Ingresar</NavLink>
 </nav>

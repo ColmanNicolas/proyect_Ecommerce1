@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams  } from "react-router-dom";
 import "../components/clasesGenerales.css"
+import { faker } from '@faker-js/faker';
 
 const FormularioModificacion = () => {
     
@@ -35,6 +36,15 @@ const FormularioModificacion = () => {
             });
         }
     }, []);
+
+    const generarProducto = ()=>{
+        setValue('name', faker.commerce.product())
+        setValue('brand', faker.company.name())
+        setValue('price', faker.commerce.price({min: 1, max: 99999}))
+        setValue('description', faker.commerce.productDescription())
+        setValue('stock', faker.number.int({ min: 1, max: 1000 }) )
+
+    }
 
     const borrarProducto = async () =>{
         const response = await axios.delete(`http://localhost:4000/productos/${id}`);
@@ -85,9 +95,9 @@ const FormularioModificacion = () => {
 
             <div className="mt-2">
                 <label htmlFor="precioProducto" className="form-label">Precio</label>
-                <input type="number" className="form-control" placeholder="Ingrese el precio del producto" id="precioProducto"{...register('price', {
+                <input type="number" step="0.01"  className="form-control" placeholder="Ingrese el precio del producto" id="precioProducto"{...register('price', {
                     required: true,
-                    pattern:/^[1-9]\d*$/,
+                    pattern: /^[0-9]+(\.[0-9]{1,2})?$/,
                 })
                 } />
             </div>
@@ -125,6 +135,7 @@ const FormularioModificacion = () => {
             <div className="d-flex justify-content-between py-2 px-4">
                 <Link to={"/productos"} className="btn btn-primary fw-semibold" >Volver</Link>
                 { accion==="modificar" && <button type="submit" className="btn btn-dark border-white fw-semibold">Modificar</button>}
+                { accion==="agregar" && <button type="button" className="btn btn-warning fw-semibold" onClick={generarProducto}>Generar Aleatorio</button>}
                 { accion==="agregar" && <button type="submit" className="btn btn-success fw-semibold">Guardar Producto</button>}
                 { accion==="modificar" && <button type="button" className="btn btn-danger fw-semibold" onClick={borrarProducto}>Eliminar</button>} 
             </div>       
