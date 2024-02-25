@@ -1,22 +1,39 @@
-import { NavLink } from "react-router-dom";
+
 import FormularioRegistro from "../../components/FormularioRegistro";
 import '../../components/formulario.css'
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import toast, { Toaster } from 'react-hot-toast';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Registro = () => {
+    const navigate = useNavigate();
+    const [respuestaAxios, setRespuestaAxios] = useState(null);
+
+    const handleRespuestaAxios = (respuesta,codigo) => {     
+            notify(respuesta,codigo);      
+    }
+
+    const notify = (respuesta,codigo) => {       
+        if(codigo===0){
+            toast.success(respuesta);
+            setTimeout(() => {
+                navigate('/login');
+            }, 2500);
+        }else{
+            toast.error(respuesta);
+        }
+    }
 
     return (
         <>
             <div className="d-flex flex-column min-vh-100">
-                <div>
-                    <Navbar />
-                    <div className="mt-5 d-flex justify-content-center">
-                        <FormularioRegistro />
-                    </div>
+                <Navbar />
+                <div className=" d-flex justify-content-center" style={{marginTop:"4%",marginBottom:"auto"}}>
+                    <FormularioRegistro onRespuestaAxios={handleRespuestaAxios}/>
                 </div>
-                <div className="mt-auto">
-                    <Footer />
-                </div>
+                <Footer />
             </div>
         </>
     )

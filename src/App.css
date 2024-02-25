@@ -28,6 +28,10 @@
     -webkit-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
     -moz-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7) !important;
 }
-body{
-    background-color: #38383b;
+body {
+    background-color: #38383b; 
+    background-image: url('/src/assets/font-images/1014.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }

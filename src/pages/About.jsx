@@ -22,8 +22,13 @@ const About = () => {
         <>
             <Navbar />
             <div className="mt-5">
-                <Swiper modules={[EffectFade]} effect="fade">
-                    {[1, 2, 3,4,5,6].map((i, el) => {
+                <Swiper modules={[EffectFade,Navigation, Pagination, Scrollbar, A11y]} effect="fade"
+                      spaceBetween={50}
+                      slidesPerView={1}
+                      navigation
+                      pagination={{ clickable: true }}
+                      scrollbar={{ draggable: true }}>
+                    {[1, 2, 3,4,5,6,7,8,9,10].map((i, el) => {
                         return( 
                         <SwiperSlide key={faker.string.uuid()}>
                             <div>

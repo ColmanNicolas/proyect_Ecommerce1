@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
-
-import './formulario.css'
-import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 import { useState } from "react";
 
+import axios from "axios";
+import './formulario.css'
 
 
-const formularioRegistro = () => {
+
+const formularioRegistro = ({ onRespuestaAxios }) => {
 
     const {
         handleSubmit,
@@ -23,19 +24,25 @@ const formularioRegistro = () => {
     };
 
     const enviarFormulario = async (data) => {
-        await axios.get(`http://localhost:3000/users`).then((results) => {
-            const idNuevo = parseInt(results.data[results.data.length - 1].id) + 1;
-            data['id'] = idNuevo.toString();
-        }).then(() => {
-            axios.post(`http://localhost:3000/users`, data);
-            console.log('Usuario creado:', data);
-        })
-        reset();
-    };
+        try {
+            await axios.post(`http://localhost:4000/api/register`, data).then((response)=>{
+                onRespuestaAxios(response.data.message, 0);
+            })
+        } catch (error) {
+            if (error.response && error.response.status === 400) {
+                onRespuestaAxios(error.response.data.message, 1);
+            } else {
+                console.error("Ocurrió un error durante la solicitud: ", error);
+            }
+        }
+    }
+    
 
-    return (
+    return (<>
+    
+        <div><Toaster/></div>
         <form
-            className="contenedorformulario p-3 outlineNegro bg-dark text-white"
+            className="contenedorformulario p-3 outlineNegro text-white"
             onSubmit={handleSubmit(enviarFormulario)}
         >
             <h3 className="my-2 text-white">FORMULARIO DE REGISTRO</h3>
@@ -90,7 +97,7 @@ const formularioRegistro = () => {
                     id="correoRegistro"
                     {...register("correoElectronico", {
                         required: true,
-                        maxLength: 30,
+                        maxLength: 35,
                     })}
                 />
                 {errors.correoElectronico && (
@@ -118,7 +125,7 @@ const formularioRegistro = () => {
                     />
                     <button type="button" className=" bg-dark px-2 text-white fw-bold"
                         onClick={visibilidadContraseña}
-                        style={{ borderRadius: "0 10px 10px 0 " }}> {showPassword ? <i class="bi bi-eye-slash"></i> : <i class="bi bi-eye"></i>} </button>
+                        style={{ borderRadius: "0 10px 10px 0 " }}> {showPassword ? <i className="bi bi-eye-slash"></i> : <i className="bi bi-eye"></i>} </button>
                 </div>
                 {errors.contraseñaRegistro && (
                     <>
@@ -186,6 +193,7 @@ const formularioRegistro = () => {
                 </button>
             </div>
         </form>
+        </>
     );
 };
 

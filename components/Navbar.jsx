@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import './clasesGenerales.css'
 const Navbar = () =>{
     return(
-<nav className="bg-primary d-flex " style={{borderBottom:"2px solid black"}}>
+<nav className="fondoAzulprimario d-flex " style={{borderBottom:"2px solid black"}}>
     <div className="fs-1 py-1 px-2 fw-bold text-white ">LOGO</div>
     <NavLink to={"/home"} className="mx-2 navLinkItems">Inicio</NavLink>
     <NavLink to={"/vendedores"} className="navLinkItems">Vendedores</NavLink>

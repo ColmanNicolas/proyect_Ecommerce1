@@ -55,14 +55,15 @@ const FormularioModificacion = () => {
     const enviarFormularrio = async (inputsData) =>{
         if(accion==="modificar"){
             const response = await axios.put(`http://localhost:4000/productos/${id}`, inputsData).then((response)=>{
-                console.log('Elemento modificado:', response.data);
+                console.log('Elemento modificado:', response.data.producto);
                 navigate(`/productos/ver/${response.data.name + "-"+ response.data.brand + "-" + id }`);
             })
 
         }else if (accion ==="agregar") {
             axios.post(`http://localhost:4000/productos`,inputsData).then((response)=>{
-                console.log(response.data);        
-                navigate(`/productos/ver/${response.data.name + "-"+ response.data.brand + "-" + response.data.id }`);
+
+                console.log(response.data.producto);        
+                navigate(`/productos/ver/${response.data.producto.name + "-"+ response.data.producto.brand + "-" + response.data.producto.id }`);
             })
             }                  
             reset();

@@ -1,9 +1,10 @@
 .contenedorformulario {
     width: 400px;
     border-radius: 10px;
-    background-color: rgb(14, 110, 255);
-
+   background: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(15px); /* Aplicar un desenfoque de 10px al fondo */
 }
+
 .lineaDivisora{
     height: 1px;
     border: 1px solid rgba(253, 253, 253, 0.308);
@@ -14,4 +15,24 @@
     box-shadow: -10px 13px 12px -2px rgba(0,0,0,0.75);
     -webkit-box-shadow: -10px 13px 12px -2px rgba(0,0,0,0.75);
     -moz-box-shadow: -10px 13px 12px -2px rgba(0,0,0,0.75);
+}
+.buttonDecoration{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.733);
+    font-weight:600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-block: 16px;
+    padding-block: 8px;
+    padding-inline: 50px;
+    transition: all 0.3s ease;
+}
+.buttonDecoration:hover{
+    color: rgb(0, 0, 0) ;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+    -webkit-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
+    -moz-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
 }
