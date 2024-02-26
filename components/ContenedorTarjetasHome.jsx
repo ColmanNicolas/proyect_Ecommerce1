@@ -2,9 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper/modules';
 
 import "./clasesGenerales.css"
 import 'swiper/css';
@@ -17,10 +16,9 @@ const ContenedorTarjetasHome = () => {
     function generarAleatorio() {
         return Math.random() - 0.5;
     }
-
+    const [cantidadTarjetas, setCantidadTarjetas] = useState(null);
     const categorias = ["MEDICINA", "COMPUTADORAS", "CONSTRUCCION", "VEHICULOS", "BELLEZA", "CELULARES", "ELECTRODOMESTICOS", "BICICLETAS", "DEPORTE", "BAZAR"];
     const [productos, setProductos] = useState([]);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -45,32 +43,63 @@ const ContenedorTarjetasHome = () => {
         };
         fetchData();
     }, []);
+
+    const ajustarTarjetasCarrousel = () => {
+        const anchoPantalla = window.innerWidth;
+        if (anchoPantalla < 500 ) {
+            setCantidadTarjetas(1);
+        } else if (anchoPantalla >= 500 && anchoPantalla < 1000) {
+            setCantidadTarjetas(2);
+        } else if (anchoPantalla >= 1000 && anchoPantalla < 1300) {
+            setCantidadTarjetas(3);
+        } else {
+            setCantidadTarjetas(4);
+        }
+    }
+    window.addEventListener('resize', () => {
+        ajustarTarjetasCarrousel();
+    });
+
+    useEffect(()=>{
+        ajustarTarjetasCarrousel();
+    },[])
+
     return (
         <>
             {productos.map((categoriaProductos, index) => (
-                <div key={index} className="bg-primary mx-auto mt-5 outlineNegro" style={{ height: "400px", width: "60%", borderRadius: "10px" }}>
-                    <h1 className="text-center bg-dark my-3 py-3 text-white">{categoriaProductos.categoria}</h1>
-
-                    <Swiper className="" modules={[EffectFade, Navigation, Pagination, Scrollbar, A11y]} effect="fade"
-                        spaceBetween={10}
-                        slidesPerView={4} // Ajuste aquí para mostrar 4 tarjetas por vista
-                        navigation
-                        pagination={{ clickable: true }}
-                        scrollbar={{ draggable: true }}>
-                        {categoriaProductos.productos.map((product, productIndex) => (
-                            <SwiperSlide key={productIndex} >
-                                <Link to={product.permalink} className="" >
-                                    <div style={{width:"200px"}}>
-                                        <img className="outlineNegro" src={product.thumbnail} alt="" style={{ width: "200px",borderRadius: "10px" }} />
-                                    </div>
-                                    <hr className="text-white" />
-                                    <div className="">
-                                        <p className="text-white w-100 text-decoration-none" style={{ fontSize: "16px", lineHeight: "1.2", maxHeight: "2.4em", overflow: "hidden", textOverflow: "ellipsis" }}>{product.title}</p>
-                                    </div>
-                                </Link>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                <div key={index} className=" contenedorTarjetasHome" >
+                    <h1 className="text-center my-4 titulosCategorias py-2">{categoriaProductos.categoria}</h1>
+                    <div className='mx-2'>
+                        <Swiper modules={[Navigation, Scrollbar, A11y]}
+                            spaceBetween={40}
+                            slidesPerView={cantidadTarjetas}
+                            navigation
+                            scrollbar={{ draggable: true }}>
+                            {categoriaProductos.productos.map((product, productIndex) => (
+                                <SwiperSlide key={productIndex} >
+                                    <Link className=' text-decoration-none  d-flex flex-column justify-content-center pt-2' to={product.permalink}>
+                                        <div style={{ width: "60%", marginInline: "auto" }}>
+                                            <img
+                                                className="outlineNegro"
+                                                src={product.thumbnail}
+                                                alt=""
+                                                style={{
+                                                    width: "100%",
+                                                    borderRadius: "10px",
+                                                    maxHeight: "100%",
+                                                    objectFit: "cover"
+                                                }}
+                                            />
+                                        </div>
+                                        <div className='d-flex justify-content-center w-100'>
+                                            <div className='lineaDivisora mx-auto w-100 '></div>
+                                        </div>
+                                        <p className="text-white text-center w-100 text-decoration-none" style={{ fontSize: "16px", lineHeight: "1.2", maxHeight: "2.4em", overflow: "hidden", textOverflow: "ellipsis" }}>{product.title}</p>
+                                    </Link>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
             ))}
         </>

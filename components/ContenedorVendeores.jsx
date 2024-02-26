@@ -26,7 +26,8 @@ const ContenedorVendedores = () => {
     }, [])
 
     return (
-        <div className="mt-5 mx-auto bg-primary outlineNegro" style={{ width: "900px", borderRadius: "10px" }}>
+        <div className="mt-5 mx-auto  outlineNegro" style={{ width: "900px", borderRadius: "10px",background: "rgba(0, 0, 0, 0.61)",
+        backdropFilter: "blur(15px)"}}>
             <h1 className="text-center bg-dark my-3 py-3 text-white ">Vendedores Destacados</h1>
             <div className="row px-4">
                 {usuarios.map((usuario, index) => {

@@ -25,6 +25,7 @@ const formularioLogin = ({ onRespuestaAxios }) => {
         try {
             const response = await axios.post(`http://localhost:4000/api/login`, data).then((response) => {
                 onRespuestaAxios(response.data.message, 0);
+                console.log("Token firmado: " ,response.data.token);
             })
         } catch (error) {
             if (error.response && error.response.status === 400) {
@@ -38,7 +39,7 @@ const formularioLogin = ({ onRespuestaAxios }) => {
 
     return (
         <form
-            className="contenedorformulario p-3 outlineNegro text-white"
+            className="contenedorformularioLogin p-3  text-white"
             onSubmit={handleSubmit(enviarFormulario)}
         >
 

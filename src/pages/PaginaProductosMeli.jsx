@@ -4,8 +4,8 @@ import Navbar from "../../components/Navbar";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import BuscadorMeLi from "../../components/BuscadorMeLi";
-import "../../components/clasesGenerales.css"
 
+import "../../components/clasesGenerales.css"
 
 const PaginaProductosMeLi = () => {
     const [products, setProductList] = useState([]);
@@ -19,10 +19,11 @@ const PaginaProductosMeLi = () => {
     }, [object.busqueda]); // Aquí se especifica que el useEffect se ejecutará cada vez que object.busqueda cambie
 
     return (
-        <div className="d-flex flex-column min-vh-100 bg-terciary">
+        <div className="d-flex flex-column min-vh-100 ">
             <Navbar />
             <BuscadorMeLi />
-            <div className="my-4 mx-auto w-75 bg-primary text-white p-4 d-flex " style={{ borderRadius: "10px" }}>
+            <div className="my-4 mx-auto w-75  text-white p-4 d-flex " style={{ borderRadius: "10px" ,   background: "rgba(0, 0, 0, 0.61)",
+    backdropFilter: "blur(15px)"  }}>
                 <div className="w-25 me-4  min-vh-100 bg-dark pt-3 px-3" style={{ borderRadius: "10px 0 0 10px" }} >
                     <hr className=" mb-2 text-primary " />
                     <h1 className=" ps-1 fs-3 m-0 p-0 ">Filtros</h1>

@@ -1,10 +1,21 @@
-.contenedorformulario {
+.contenedorformularioLogin {
     width: 400px;
     border-radius: 10px;
-   background: rgba(0, 0, 0, 0.404);
-    backdrop-filter: blur(15px); /* Aplicar un desenfoque de 10px al fondo */
+    background: rgba(0, 0, 0, 0.61);
+    backdrop-filter: blur(15px); 
 }
-
+.contenedorformularioRegister {
+    width: 700px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.61);
+    backdrop-filter: blur(15px); 
+}
+@media screen and (max-width: 768px) { 
+    .contenedorformularioRegister {
+        width: 100%; 
+        margin-inline: 10%;
+    }
+}
 .lineaDivisora{
     height: 1px;
     border: 1px solid rgba(253, 253, 253, 0.308);
@@ -32,6 +43,9 @@
 .buttonDecoration:hover{
     color: rgb(0, 0, 0) ;
     background-color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding-inline: 46px;
+    margin-block: 14px;
     box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
     -webkit-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
     -moz-box-shadow: -3px 5px 6px 4px rgba(0,0,0,0.7);
