@@ -1,15 +1,14 @@
 import Footer from "../../components/Footer";
 import FormularioLogin from "../../components/FormularioLogin";
-import Navbar from "../../components/Navbar";
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { NavbarLandingPage } from "../../components/Navbars";
 
 const Login = () => {
     const navigate = useNavigate();
     const [respuestaAxios, setRespuestaAxios] = useState(null);
-
+    
     const handleRespuestaAxios = (respuesta,codigo) => {     
             notify(respuesta,codigo);      
     }
@@ -29,7 +28,7 @@ const Login = () => {
     return (
         <>
             <div className="d-flex flex-column min-vh-100">
-                <Navbar />
+                <NavbarLandingPage />
                 <Toaster
                     position="top-center"
                     reverseOrder={false}

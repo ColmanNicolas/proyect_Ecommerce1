@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import CajaComentariosProductos from "../../components/CajaComentariosProductos";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import { Navbar } from  "../../components/Navbars";
 import TarjetaProducto from "../../components/TarjetaProducto";
 import "../../components/clasesGenerales.css"
 

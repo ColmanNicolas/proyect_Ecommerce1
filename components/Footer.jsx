@@ -7,7 +7,7 @@ const Footer = () => {
             <div className=" py-4 col-12 col-md-4">
                 <h2 className="  text-center text-white py-1" >Legal</h2>
                 <div className="lineaDivisora w-50 mx-auto"></div>
-                <ul className="text-center text-white d-flex flex-column text-decoration-none">
+                <ul className="text-center text-white d-flex flex-column text-decoration-none ps-0">
                     <Link className="mt-1 text-decoration-none text-white">Terminos y Condiciones</Link>
                     <Link className="mt-1 text-decoration-none text-white">Privacidad</Link>
                     <Link className="mt-1 text-decoration-none text-white">Avisos Legales</Link>
@@ -27,7 +27,7 @@ const Footer = () => {
             <div className=" py-4 col-12 col-md-4">
                 <h2 className="text-center text-white w-75 mx-auto">Centro de Ayuda</h2>
                 <div className="lineaDivisora w-50 mx-auto"></div>
-                <ul className="text-center text-white d-flex flex-column">
+                <ul className="text-center text-white d-flex flex-column ps-0">
                     <Link className="mt-1 text-decoration-none text-white">Preguntas Frecuentes </Link>
                     <Link className="mt-1 text-decoration-none text-white">Contacto</Link>
                     <Link className="mt-1 text-decoration-none text-white">Blog</Link>

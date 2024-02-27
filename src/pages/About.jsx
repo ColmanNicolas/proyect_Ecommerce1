@@ -1,5 +1,5 @@
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import { Navbar } from "../../components/Navbars";
 
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';

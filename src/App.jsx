@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+
 import Login from "./pages/Login";
 import Registro from "./pages/Registro";
 import Home from "./pages/Home";
@@ -9,21 +10,25 @@ import PaginaVerProducto from "./pages/PaginaVerProducto";
 import PaginaProductosMeLi from "./pages/PaginaProductosMeli";
 import PaginaModificacionProducto from "./pages/PaginaModificacionProducto";
 import Vendedores from "./pages/Vendedores";
+import CarritoDeCompras from "./pages/CarritoDeCompras";
+import MiCuenta from "./pages/MiCuenta";
 
 
 function App() {
     return <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Navigate to="login"/>} />
-            <Route path="/home" element={<Home/>} />
-            <Route path="/login" element={<Login /> }/>
+            <Route path="/" element={<Navigate to="login" />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
             <Route path="/vendedores" element={<Vendedores />} />
             <Route path="/productos" element={<Products />} />
             <Route path="/productos/ver/:selected" element={<PaginaVerProducto />} />
-            <Route path="/productos/modificacion/:target" element={<PaginaModificacionProducto/>} />
+            <Route path="/productos/modificacion/:target" element={<PaginaModificacionProducto />} />
             <Route path="/paginaproductosmeli/:busqueda" element={<PaginaProductosMeLi />} />
             <Route path="*" element={<Pagina404 />} />
+            <Route path="/carrito-de-compras" element={<CarritoDeCompras />} />
+            <Route path="/micuenta" element={<MiCuenta />} />
             <Route path="/about" element={<About />} />
         </Routes>
     </BrowserRouter>;

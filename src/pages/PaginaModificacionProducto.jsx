@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer";
 import FormularioModificacion from "../../components/FormularioModificacion";
-import Navbar from "../../components/Navbar";
+import { Navbar } from  "../../components/Navbars";
 
 const PaginaModificacionProducto = () => {
     FormularioModificacion

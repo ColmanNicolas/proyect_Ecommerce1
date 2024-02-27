@@ -2,7 +2,7 @@
 import FormularioRegistro from "../../components/FormularioRegistro";
 import '../../components/formulario.css'
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import {  NavbarLandingPage } from "../../components/Navbars";
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +29,7 @@ const Registro = () => {
     return (
         <>
             <div className="d-flex flex-column min-vh-100">
-                <Navbar />
+                <NavbarLandingPage />
                 <div className=" d-flex justify-content-center" style={{marginTop:"4%",marginBottom:"7%"}}>
                     <FormularioRegistro onRespuestaAxios={handleRespuestaAxios}/>
                 </div>
