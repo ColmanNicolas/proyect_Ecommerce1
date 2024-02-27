@@ -23,13 +23,13 @@ const PaginaProductosMeLi = () => {
             <Navbar />
             <BuscadorMeLi />
             <div className="my-4 mx-auto w-75  text-white p-4 d-flex " style={{ borderRadius: "10px" ,   background: "rgba(0, 0, 0, 0.61)",
-    backdropFilter: "blur(15px)"  }}>
-                <div className="w-25 me-4  min-vh-100 bg-dark pt-3 px-3" style={{ borderRadius: "10px 0 0 10px" }} >
+                backdropFilter: "blur(15px)"  }}>
+                <div className="w-25 me-4  min-vh-100 bg-dark  pt-3 px-3" style={{ borderRadius: "10px 0 0 10px" }} >
                     <hr className=" mb-2 text-primary " />
                     <h1 className=" ps-1 fs-3 m-0 p-0 ">Filtros</h1>
                     <hr className=" my-2 text-primary" />
                 </div>
-                <div className="w-76 bg-dark" style={{ borderRadius: "0px 10px 10px 0" }}>
+                <div className="w-76 fondoAzulprimario outlineNegro" style={{ borderRadius: "0px 10px 10px 0" }}>
                     {products.map((producto, index) => (
                         <div key={producto.id}>
                             <div className="ms-auto w-100 py-3 px-5 d-flex align-items-center">

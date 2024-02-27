@@ -30,7 +30,7 @@ const Registro = () => {
         <>
             <div className="d-flex flex-column min-vh-100">
                 <Navbar />
-                <div className=" d-flex justify-content-center" style={{marginTop:"4%",marginBottom:"auto"}}>
+                <div className=" d-flex justify-content-center" style={{marginTop:"4%",marginBottom:"7%"}}>
                     <FormularioRegistro onRespuestaAxios={handleRespuestaAxios}/>
                 </div>
                 <Footer />

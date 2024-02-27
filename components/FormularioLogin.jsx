@@ -101,7 +101,7 @@ const formularioLogin = ({ onRespuestaAxios }) => {
             <div className="text-center">
                 <Link to={"pagina404"} className="text-white text-decoration-none">¿Perdiste tu contraseña?</Link>
                 <div className="d-flex justify-content-center pt-2">
-                    <p className="pe-1">No tienes cuenta?</p>
+                    <p className="pe-1">¿No tienes cuenta?</p>
                     <Link to={"/registro"} className="fw-semibold text-decoration-none"> Resgistrate</Link>
                 </div>
             </div>

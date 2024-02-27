@@ -35,7 +35,7 @@ const Login = () => {
                     reverseOrder={false}
                 />
 
-                <div className="d-flex justify-content-center align-items-bottom " style={{ marginTop: "6%", marginBottom: "auto" }}>
+                <div className="d-flex justify-content-center align-items-bottom " style={{ marginTop: "6%", marginBottom: "10%" }}>
                     <FormularioLogin onRespuestaAxios={handleRespuestaAxios}/>
                 </div>
                 
