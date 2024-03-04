@@ -15,7 +15,7 @@ const Footer = () => {
                     <Link className="mt-1 text-decoration-none text-white">Tarifas de Envío y Políticas</Link>
                 </ul>
             </div>
-            <div className=" text-white col-12 col-md-4 d-flex justify-content-center  align-items-end mb-4">
+            <div className=" text-white col-12 col-md-4 d-flex justify-content-center align-items-end mb-3">
                 <div className=" text-center ">
                     <Link className="btn text-white fs-3"><i className="bi bi-github"></i></Link>
                     <Link className="btn text-white fs-3"><i className="bi bi-trello"></i></Link>

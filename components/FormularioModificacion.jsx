@@ -26,12 +26,13 @@ const FormularioModificacion = () => {
 
         if(accion==="modificar"){
 
-            axios.get(`http://localhost:4000/productos/${id}`).then((result) => {
+            axios.get(`http://localhost:4000/api/products/${id}`).then((result) => {
                 
                 setValue('name', result.data.name)
                 setValue('brand', result.data.brand)
                 setValue('price', result.data.price)
                 setValue('description', result.data.description)
+                setValue('category', result.data.category)
                 setValue('stock', result.data.stock)
             });
         }
@@ -47,23 +48,23 @@ const FormularioModificacion = () => {
     }
 
     const borrarProducto = async () =>{
-        const response = await axios.delete(`http://localhost:4000/productos/${id}`);
+        const response = await axios.delete(`http://localhost:4000/api/products/${id}`);
         console.log('Elemento borrado:', response.data);
         navigate("/productos");    
     }
     
     const enviarFormularrio = async (inputsData) =>{
         if(accion==="modificar"){
-            const response = await axios.put(`http://localhost:4000/productos/${id}`, inputsData).then((response)=>{
+            const response = await axios.put(`http://localhost:4000/api/products/${id}`, inputsData).then((response)=>{
                 console.log('Elemento modificado:', response.data.producto);
                 navigate(`/productos/ver/${response.data.name + "-"+ response.data.brand + "-" + id }`);
             })
 
         }else if (accion ==="agregar") {
-            axios.post(`http://localhost:4000/productos`,inputsData).then((response)=>{
+            axios.post(`http://localhost:4000/api/products`,inputsData).then((response)=>{
 
-                console.log(response.data.producto);        
-                navigate(`/productos/ver/${response.data.producto.name + "-"+ response.data.producto.brand + "-" + response.data.producto.id }`);
+                console.log(response.data._id);        
+                navigate(`/productos/ver/${response.data.name + "-"+ response.data.brand + "-" + response.data._id }`);
             })
             }                  
             reset();
@@ -119,6 +120,20 @@ const FormularioModificacion = () => {
             </div>
 
             {errors.description && errors.description.type === "required" && <p className="formatoErros">Este campo no puede quedar vacío</p>}
+
+            <div className="mt-2">
+                <label htmlFor="categoriaProducto" className="form-label">Categoria</label>
+                <input type="text" className="form-control" placeholder="Ingrese la categoría del producto" id="categoriaProducto"{...register('category', {
+                    required: true,
+                    minLength: 3,
+                    maxLength: 20,
+                })
+                } />
+            </div>
+
+            {errors.category && errors.category.type === "required" && <p className="formatoErros">Este campo no puede quedar vacío</p>}
+            {errors.category && errors.category.type === "minLength" && <p className="formatoErros">categoria no valida</p>}
+            {errors.category && errors.category.type === "maxLength" && <p className="formatoErros">categoria no valida</p>}
 
             <div className="mt-2">
                 <label htmlFor="stockProducto" className="form-label">Stock</label>

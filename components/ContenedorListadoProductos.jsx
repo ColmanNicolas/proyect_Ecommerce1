@@ -8,7 +8,7 @@ const ContenedorListadoProductos = () => {
     const [productsList, setProductsList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/productos').then((result) => {
+        axios.get('http://localhost:4000/api/products').then((result) => {
             console.log(result.data);
             setProductsList(result.data);
         });
@@ -33,14 +33,14 @@ const ContenedorListadoProductos = () => {
                     </tr>
                 </thead>
                 {productsList.map((product, index) => {
-                    return <tbody key={product.id}>
+                    return <tbody key={product._id}>
                         <tr>
                             <td className=" ps-4 pt-3">{product.name}</td>
                             <td className=" pt-3">{product.brand}</td>
                             <td className=" pt-3">$ {product.price}</td>
                             <td className=" text-end pe-5">
-                                <Link to={`/productos/ver/${product.name + "-" + product.brand + "-" + product.id}`} className="btn btn-primary px-4 fw-semibold">Ver</Link>
-                                <Link to={`/productos/modificacion/modificar-${product.name + "-" + product.id}`} className="btn btn-danger ms-2 fw-semibold">Modificar</Link>
+                                <Link to={`/productos/ver/${product.name + "-" + product.brand + "-" + product._id}`} className="btn btn-primary px-4 fw-semibold">Ver</Link>
+                                <Link to={`/productos/modificacion/modificar-${product.name + "-" + product._id}`} className="btn btn-danger ms-2 fw-semibold">Modificar</Link>
                             </td>
                         </tr>
                     </tbody>
